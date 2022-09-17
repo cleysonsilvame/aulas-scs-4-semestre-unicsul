@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Arial;
+  }
+}
+
+
+@layer components {
+      .link-button {
+        @apply inline-block mt-2 px-6 py-2.5
+ 				bg-transparent text-slate-50 
+				font-medium text-xs leading-tight 
+				uppercase rounded 
+				hover:text-slate-900 hover:bg-gray-100 
+				focus:bg-gray-100 focus:outline-none focus:ring-0 
+				active:bg-gray-200 transition duration-150 ease-in-out;
+      }
+    }
