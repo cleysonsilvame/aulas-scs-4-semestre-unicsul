@@ -9,34 +9,37 @@ import model.DAO;
 
 import java.io.IOException;
 
-/**
- * Servlet implementation class Controller
- */
+
 @WebServlet(urlPatterns = { "/controller", "/main" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private DAO con;
+	private DAO con = new DAO();;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
+
 	public Controller() {
 		super();
-		con = new DAO();
 
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		con.testeConexao();
-
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
+		String action = request.getServletPath();
+		System.out.println(action);
+		
+		if (action.equals("/main")) {
+			contatos(request, response);
+		}
 	}
+	
+	
+	protected void contatos(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+	}	
+	
+	
 
 }
