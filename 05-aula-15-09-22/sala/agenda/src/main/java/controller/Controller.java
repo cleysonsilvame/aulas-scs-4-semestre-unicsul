@@ -6,11 +6,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.DAO;
+import model.Javabeans;
 
 import java.io.IOException;
 
 
-@WebServlet(urlPatterns = { "/controller", "/main" })
+@WebServlet(urlPatterns = { "/controller", "/main", "/insert" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private DAO con = new DAO();;
@@ -31,6 +32,10 @@ public class Controller extends HttpServlet {
 		
 		if (action.equals("/main")) {
 			contatos(request, response);
+		}else if (action.equals("/insert")) {
+			novoContato(request, response);
+		}else {
+			response.sendRedirect("index.html");
 		}
 	}
 	
@@ -41,5 +46,25 @@ public class Controller extends HttpServlet {
 	}	
 	
 	
-
+	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+//		System.out.println(request.getParameter("nome"));
+//		System.out.println(request.getParameter("fone"));
+//		System.out.println(request.getParameter("email"));
+		
+		con.testeConection();
+		
+		Javabeans contatos = new Javabeans();
+		
+		String nome = request.getParameter("nome");
+		String fone = request.getParameter("fone");
+		String email = request.getParameter("email");
+		
+		contatos.setNome(nome);
+		contatos.setEmail(email);
+		contatos.setEmail(email);
+		
+//		con.insert(contatos);
+	}	
+	
 }
