@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DAO {
 
 	String driver = "com.mysql.cj.jdbc.Driver";
-	String url = "jdbc:mysql://localhost:3306/dbagenda?useTimezone=true%serverTimezone=UTC";
+	String url = "jdbc:mysql://localhost:3306/dbagenda?useTimezone=true&serverTimezone=UTC";
 	String user = "root";
 	String password = "root";
 	

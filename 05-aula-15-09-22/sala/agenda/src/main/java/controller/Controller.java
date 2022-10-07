@@ -52,7 +52,7 @@ public class Controller extends HttpServlet {
 //		System.out.println(request.getParameter("fone"));
 //		System.out.println(request.getParameter("email"));
 		
-		con.testeConection();
+//		con.testeConection();
 		
 		Javabeans contatos = new Javabeans();
 		
@@ -61,10 +61,10 @@ public class Controller extends HttpServlet {
 		String email = request.getParameter("email");
 		
 		contatos.setNome(nome);
-		contatos.setEmail(email);
+		contatos.setFone(fone);
 		contatos.setEmail(email);
 		
-//		con.insert(contatos);
+		con.insert(contatos);
 	}	
 	
 }
