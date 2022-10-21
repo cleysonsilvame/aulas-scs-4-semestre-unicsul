@@ -1,5 +1,17 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
+<%@ page import="model.Javabeans"%>
+<%@ page import="java.util.ArrayList"%>
+
+<%
+ArrayList<Javabeans> contatos = (ArrayList<Javabeans>) request.getAttribute("contatos");
+
+for (Javabeans contato : contatos) {
+	out.println('olá');
+}
+%>
 <!DOCTYPE html>
 <html>
 
@@ -7,13 +19,16 @@
 <meta charset='UTF-8'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/svg+xml" sizes="21x21" href="imagens/phone.svg">
+<link rel="icon" type="image/svg+xml" sizes="21x21"
+	href="imagens/phone.svg">
 
 <title>Agenda de contatos - JSP</title>
 <script src='https://cdn.tailwindcss.com'></script>
 
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+	rel="stylesheet">
 
 
 <style type="text/tailwindcss">
@@ -43,16 +58,13 @@
 	<div
 		class='container mx-auto bg-pink-800 px-6 py-8 rounded-md shadow-xl'>
 		<div class='flex flex-col justify-center items-center'>
-		<div class='flex gap-2 items-center' >
-		
-			<img alt="Calendário" src="imagens/calendar.svg" class="w-20"/>
-			<h1 class='text-white text-7xl font-medium tracking-tight'>
-				Agenda de contatos - JSP
-			</h1>
-		</div>	
-			<a href="main" class="link-button">
-				Acessar
-			</a>
+			<div class='flex gap-2 items-center'>
+
+				<img alt="Calendário" src="imagens/calendar.svg" class="w-20" />
+				<h1 class='text-white text-7xl font-medium tracking-tight'>
+					Agenda de contatos - JSP</h1>
+			</div>
+			<a href="main" class="link-button"> Acessar </a>
 		</div>
 	</div>
 </body>
